@@ -1,0 +1,5 @@
+# Arquivos fonte pesados (PSD) e sistema
+*.psd
+.DS_Store
+Thumbs.db
+.claude/settings.local.json
