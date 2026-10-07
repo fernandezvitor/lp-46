@@ -50,8 +50,7 @@ ul{list-style:none;margin:0;padding:0}
 .subtitle{text-align:center;font-size:clamp(1.05rem,1.8vw,1.9rem);font-weight:500;margin-top:6px}
 
 /* Ícone em círculo verde */
-.icon-circle{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:linear-gradient(180deg,#2E8B2C,#1F6B1F);box-shadow:0 8px 16px rgba(0,0,0,.2)}
-.icon-circle svg{width:36px;height:36px;fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.icon-circle{width:85px;height:85px;border-radius:50%;box-shadow:0 8px 16px rgba(0,0,0,.2)}
 
 /* Card laranja */
 .card-o{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;background:linear-gradient(180deg,#FFA233,#F07A12);border-radius:var(--radius);padding:58px 20px 26px;margin-top:42px;font-weight:700;font-size:clamp(1rem,1.4vw,1.55rem);line-height:1.2;box-shadow:0 10px 24px rgba(160,40,0,.2)}
@@ -150,15 +149,17 @@ ul{list-style:none;margin:0;padding:0}
 .comprar{position:relative;background:linear-gradient(90deg,#FFA233 0%,#FF6A0A 25%,var(--orange-deep) 55%);padding:170px 0 170px;overflow:hidden}
 .comprar__grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px;align-items:center}
 .comprar__text p{font-size:clamp(1rem,1.35vw,1.45rem);margin-top:40px;max-width:520px}
-.carousel{min-width:0}
-.carousel__track{display:flex;gap:30px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 4px 40px;scrollbar-width:none;-webkit-mask:linear-gradient(90deg,#000 80%,#0000);mask:linear-gradient(90deg,#000 80%,#0000)}
+/* trilho vaza até a borda direita da tela, como no layout */
+.carousel{min-width:0;margin-right:calc((100vw - min(1400px,88vw,100vw - 48px)) / -2)}
+.carousel__track{display:flex;gap:40px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 4px 40px;scrollbar-width:none}
+/* esmaece só a ponta direita, e só enquanto houver card escondido */
+.carousel__track.has-more{-webkit-mask:linear-gradient(90deg,#000 calc(100% - 120px),#0000);mask:linear-gradient(90deg,#000 calc(100% - 120px),#0000)}
 .carousel__track::-webkit-scrollbar{display:none}
-.loja{position:relative;flex:0 0 246px;scroll-snap-align:start}
-.loja__logo{display:grid;place-items:center;height:240px;border-radius:48px;background:var(--cream);padding:30px;box-shadow:0 10px 24px rgba(120,30,0,.15);color:#C8102E;font-weight:800;font-size:1.4rem;text-align:center}
-.loja__logo img{max-height:140px;width:auto}
-.loja__cart{position:absolute;left:50%;bottom:-32px;transform:translateX(-50%);width:66px;height:66px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,var(--green-2),var(--green-3));transition:transform .2s}
+.carousel__nav[hidden]{display:none}
+.loja{position:relative;flex:0 0 248px;scroll-snap-align:start}
+.loja__card{width:100%;filter:drop-shadow(0 10px 18px rgba(120,30,0,.15))}
+.loja__cart{position:absolute;left:50%;bottom:-32px;transform:translateX(-50%);width:66px;height:66px;transition:transform .2s}
 .loja:hover .loja__cart{transform:translateX(-50%) scale(1.08)}
-.loja__cart svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .carousel__nav{display:flex;align-items:center;gap:10px;margin-top:10px}
 .carousel__arrow{width:28px;height:28px;border-radius:50%;border:0;background:var(--orange-2);display:grid;place-items:center;cursor:pointer;padding:0}
 .carousel__arrow svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:3}
@@ -214,7 +215,6 @@ ul{list-style:none;margin:0;padding:0}
   .comp{padding:0 24px 36px;margin-top:100px}
   .comprar{padding:110px 0 120px}
   .loja{flex-basis:200px}
-  .loja__logo{height:190px;border-radius:38px}
   .footer{padding:90px 0 50px}
   .footer__legal{font-size:.8rem;text-align:left}
   .footer__bottom{flex-direction:column}

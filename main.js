@@ -10,12 +10,6 @@ document.querySelectorAll('.header__nav a[href^="#"]').forEach(a =>
   a.addEventListener('click', () => { header.classList.remove('is-open'); toggle.setAttribute('aria-expanded', false); })
 );
 
-// Logo de farmácia sem imagem → mostra o nome
-document.querySelectorAll('.loja__logo img').forEach(img => {
-  const fallback = () => { img.parentElement.textContent = img.alt; };
-  if (img.complete && img.naturalWidth === 0) fallback(); else img.addEventListener('error', fallback);
-});
-
 // Carrossel de farmácias
 document.querySelectorAll('[data-carousel]').forEach(c => {
   const track = c.querySelector('[data-track]');
@@ -37,6 +31,10 @@ document.querySelectorAll('[data-carousel]').forEach(c => {
   const update = () => {
     const i = Math.round(track.scrollLeft / step());
     [...dotsWrap.children].forEach((d, k) => d.setAttribute('aria-current', k === i));
+    // esmaecimento e navegação só quando há cards fora da tela
+    const overflow = track.scrollWidth - track.clientWidth > 1;
+    track.classList.toggle('has-more', overflow && track.scrollLeft + track.clientWidth < track.scrollWidth - 1);
+    c.querySelector('.carousel__nav').hidden = !overflow;
   };
   c.querySelector('[data-prev]').addEventListener('click', () => track.scrollBy({ left: -step() }));
   c.querySelector('[data-next]').addEventListener('click', () => track.scrollBy({ left: step() }));
