@@ -134,15 +134,16 @@ ul{list-style:none;margin:0;padding:0}
 .card-o--sm span{font-weight:500;font-size:1.05rem;margin-top:10px}
 .laxante__text .btn{margin-top:40px}
 
-/* ---------- Waves ---------- */
-.wave{position:absolute;top:0;left:0;right:0;height:28px;background:var(--wave-color,var(--orange-deep));
-  -webkit-mask:radial-gradient(22px at 50% 100%,#0000 98%,#000) 50% 0/44px 28px repeat-x;
-          mask:radial-gradient(22px at 50% 100%,#0000 98%,#000) 50% 0/44px 28px repeat-x}
-.wave--cream{--wave-color:var(--cream-2)}
-.wave--orange{--wave-color:var(--orange-deep)}
+/* ---------- Ondas (fundos exportados do PSD) ----------
+   Faixas de 14px no topo/base de cada PNG ficam com altura fixa (border-image) e só esticam na
+   largura; o miolo estica livre. Toda seção com onda sobe 14px sobre a anterior, e como a onda de
+   baixo de uma é o encaixe exato da onda de cima da próxima, elas se encaixam em qualquer largura. */
+.onda{position:relative;margin-top:-14px;border-style:solid;border-width:0;
+  border-image:var(--onda) 14 0 14 0 fill / 14px 0 14px 0 stretch;background:none}
+.onda--so-topo{border-image:var(--onda) 14 0 0 0 fill / 14px 0 0 0 stretch}
 
 /* ---------- Qual escolher ---------- */
-.escolher{position:relative;background:linear-gradient(180deg,var(--cream),var(--cream-2));padding:150px 0 140px}
+.escolher{--onda:url(assets/bg-onda-creme.png);padding:150px 0 140px}
 .comparativo{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:60px}
 .comp{border-radius:44px;padding:0 50px 50px;margin-top:110px;display:flex;flex-direction:column;align-items:center}
 .comp img{height:180px;width:auto;margin-top:-110px;filter:drop-shadow(0 12px 10px rgba(0,0,0,.25))}
@@ -157,7 +158,9 @@ ul{list-style:none;margin:0;padding:0}
 .comp--green li::before{background:#F5A800}
 
 /* ---------- Onde comprar ---------- */
-.comprar{position:relative;background:linear-gradient(90deg,#FFA233 0%,#FF6A0A 25%,var(--orange-deep) 55%);padding:170px 0 170px;overflow:hidden}
+.comprar{--onda:url(assets/bg-onda-laranja.png);padding:170px 0 170px;overflow:hidden}
+/* overflow:hidden faz o Chrome não pintar o "fill" do border-image; clip corta o carrossel sem esse efeito */
+@supports (overflow-x:clip){.comprar{overflow:visible;overflow-x:clip}}
 .comprar__grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px;align-items:center}
 .comprar__text p{font-size:clamp(1rem,1.35vw,1.45rem);margin-top:40px;max-width:520px}
 /* trilho vaza até a borda direita da tela, como no layout */
@@ -179,7 +182,7 @@ ul{list-style:none;margin:0;padding:0}
 .carousel__dots button[aria-current="true"]{background:#fff}
 
 /* ---------- Footer ---------- */
-.footer{position:relative;background:var(--green);padding:120px 0 70px}
+.footer{--onda:url(assets/bg-onda-verde.png);padding:120px 0 70px}
 .footer__legal{font-size:.95rem;text-align:justify;display:flex;flex-direction:column;gap:28px;line-height:1.8}
 .footer__bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:60px;flex-wrap:wrap}
 .footer__logo img{width:84px;border-radius:50%}
