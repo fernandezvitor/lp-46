@@ -6,9 +6,6 @@ Hoje esses botões estão com `href="#"` (não levam a lugar nenhum). Basta mand
 
 | Onde | Botão | Link |
 |---|---|---|
-| Header **e** rodapé (mesmo link nos dois) | Instagram | _a receber_ |
-| Header **e** rodapé | Facebook | _a receber_ |
-| Header **e** rodapé | LinkedIn | _a receber_ |
 | Carrossel "Seu conforto já começa…" | Drogasil | _a receber_ |
 | Carrossel | Droga Raia | _a receber_ |
 | Carrossel | Panvel | _a receber_ |
@@ -21,6 +18,8 @@ Hoje esses botões estão com `href="#"` (não levam a lugar nenhum). Basta mand
 - "Saiba onde comprar" (seção Complexo Senna)
 
 Os links de farmácia e redes sociais abrem em nova aba.
+
+✅ Redes sociais já aplicadas (header e rodapé): só **Instagram** (instagram.com/linha_46) e **YouTube** (youtube.com/@Linha46-oficial); Facebook e LinkedIn removidos.
 
 ## Imagens a receber
 
