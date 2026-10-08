@@ -8,12 +8,8 @@ Olá! Recebi os ícones, os cards das farmácias, o logo 46 e os produtos do com
 
 | Arquivo | O que é | Tamanho de uso (1x) |
 |---|---|---|
-| `hero-geleia.png` | Pote 46 Geleia + torrada + ameixa + selo "Fonte de fibras" (topo) | 530 × 520 |
-| `hero-senna.png` | Caixa + frasco Senna + selo "Ação de 6-12h" (topo) | 430 × 475 |
-| `senna-mao.png` | Mão segurando a caixa do Senna (seção Laxante) | 830 × 750 |
-| `badge-acao-6-12h.png` | Selo circular "Ação de 6-12h" (relógio) | 197 × 200 |
-| `badge-uso-adulto.png` | Selo circular "Uso adulto" | 197 × 200 |
-| `badge-uso-oral.png` | Selo circular "Uso oral" (cápsula) | 197 × 200 |
+| `hero-geleia.png` | Pote 46 Geleia + torrada + ameixa + selo "Fonte de fibras" (topo, só no celular) | 530 × 520 |
+| `hero-senna.png` | Caixa + frasco Senna + selo "Ação de 6-12h" (topo, só no celular) | 430 × 475 |
 | `selo-sabor-ameixa.png` | Selo "Sabor ameixa" da seção Lançamento (o pote novo veio sem ele) | ~170 × 170 |
 | `logo-megalabs.png` | Logo Megalabs branco (rodapé) | 157 × 40 |
 

@@ -104,7 +104,7 @@ ul{list-style:none;margin:0;padding:0}
 .linha__text{flex:1;text-align:center;padding:16px 28px;font-size:clamp(.95rem,1.4vw,1.55rem);font-weight:500}
 
 /* ---------- Geleia ---------- */
-.geleia{background:linear-gradient(170deg,var(--orange-deep) 20%,#FF6A10 60%,var(--orange-deep));padding:60px 0 120px}
+.geleia{background:linear-gradient(180deg,var(--orange-deep) 15%,#FF6A10 55%,var(--orange-deep) 90%);padding:60px 0 120px}
 .split{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
 .split__text p{font-size:clamp(1rem,1.25vw,1.3rem);margin-top:22px}
 .split__text .title-lg{margin-top:56px;text-transform:uppercase}
@@ -116,12 +116,16 @@ ul{list-style:none;margin:0;padding:0}
 .beneficio img{width:100%;aspect-ratio:437/239;object-fit:cover;border-radius:0 0 28px 28px}
 
 /* ---------- Laxante ---------- */
-.laxante{background:radial-gradient(ellipse at 30% 40%,#FF8A1E,var(--orange-deep) 60%);padding:120px 0 0;overflow:hidden}
+.laxante{background:linear-gradient(var(--orange-deep),#0000 260px),radial-gradient(ellipse at 30% 40%,#FF8A1E,var(--orange-deep) 60%);padding:120px 0 0;overflow:hidden}
+/* corta só na horizontal: o brilho do topo da mão pode invadir a seção de cima sem virar um retângulo */
+@supports (overflow-x:clip){.laxante{overflow:visible;overflow-x:clip}}
 .split--laxante{grid-template-columns:1fr 1fr;align-items:end}
-.laxante__media{position:relative;align-self:stretch;display:flex;align-items:flex-end;margin-left:calc((100vw - min(1400px,88vw,100vw - 48px)) / -2)}
-.laxante__hand{width:min(830px,100%)}
-.laxante__badges{position:absolute;bottom:60px;left:max(30%,320px);display:flex;gap:16px;transform:translateX(-50%)}
-.laxante__badges img{width:clamp(110px,10vw,196px)}
+/* mão (com selos) ancorada no canto inferior esquerdo da tela; o topo da arte é transparente e pode ser cortado */
+.laxante__media{position:relative;align-self:stretch;margin-left:calc((100vw - min(1400px,88vw,100vw - 48px)) / -2)}
+.laxante__hand{position:absolute;left:0;bottom:0;width:min(860px,45vw);max-width:none;
+  /* o brilho branco da arte tem borda dura: esfuma topo e lateral direita */
+  -webkit-mask:linear-gradient(to bottom,#0000,#000 12%),linear-gradient(to left,#0000,#000 20%);-webkit-mask-composite:source-in;
+          mask:linear-gradient(to bottom,#0000,#000 12%) intersect,linear-gradient(to left,#0000,#000 20%)}
 .laxante__text{padding-bottom:110px}
 .laxante__text .title-lg{margin:40px 0 28px}
 .laxante__text p{font-size:clamp(1rem,1.25vw,1.3rem)}
@@ -216,8 +220,7 @@ ul{list-style:none;margin:0;padding:0}
   .linha__text{flex-basis:100%;padding:10px 20px 18px}
   .laxante{padding-top:70px}
   .laxante__media{margin-left:-24px;order:2}
-  .laxante__badges{left:50%;bottom:24px;gap:8px}
-  .laxante__badges img{width:96px}
+  .laxante__hand{position:static;width:calc(100% + 24px);margin-top:-14%}
   .laxante__text{padding-bottom:20px}
   .escolher{padding:100px 0 90px}
   .comp{padding:0 24px 36px;margin-top:100px}
