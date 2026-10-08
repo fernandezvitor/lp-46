@@ -8,10 +8,22 @@ Olá! Recebi os ícones, os cards das farmácias, o logo 46 e os produtos do com
 
 | Arquivo | O que é | Tamanho de uso (1x) |
 |---|---|---|
-| `hero-geleia.png` | Pote 46 Geleia + torrada + ameixa + selo "Fonte de fibras" (topo, só no celular) | 530 × 520 |
-| `hero-senna.png` | Caixa + frasco Senna + selo "Ação de 6-12h" (topo, só no celular) | 430 × 475 |
 | `selo-sabor-ameixa.png` | Selo "Sabor ameixa" da seção Lançamento (o pote novo veio sem ele) | ~170 × 170 |
 | `logo-megalabs.png` | Logo Megalabs branco (rodapé) | 157 × 40 |
+
+## ⚠️ Banner mobile (`banner-hero-mobile.webp`) — rótulos diferentes do produto real
+
+A versão vertical do banner chegou com as embalagens com texto diferente do produto real (parece regerada ou retocada). A versão desktop está correta. Poderia refazer a mobile usando as mesmas embalagens da desktop?
+
+**Caixa e frasco do Complexo Senna (medicamento):**
+- "Megabots" → **Megalabs**
+- "Cassia senna 10H" → **1DH** · "Polygonum punctatum 10H" → **1CH** · "Cólmsiana canadensis 10H" → **Collinsonia canadensis 1CH**
+- Selo "Ação de 6-12h" da caixa ilegível ("Oouua"); texto do frasco ilegível
+
+**Pote da 46 Geleia:**
+- "MIX DE 6 FIBRAS + ACEROLA E FOS" → **MIX DE FIBRAS (Inulina e FOS)**
+- "Peso líq. 450g / 46 unidades" → **150g** (ou 250g)
+- Selos "Fonte de fibras" e "Sabor ameixa" do pote com letras embaralhadas
 
 ## Outros
 

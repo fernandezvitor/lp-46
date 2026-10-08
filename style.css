@@ -99,7 +99,9 @@ ul{list-style:none;margin:0;padding:0}
 .situacoes .card-o{min-height:180px}
 .linha{display:flex;align-items:center;margin-top:90px;border-radius:999px;background:var(--cream);color:#3A2A20;box-shadow:var(--shadow);transition:transform .2s}
 .linha:hover{transform:translateY(-2px)}
-.linha__label{background:linear-gradient(180deg,var(--green-2),var(--green-3));color:#fff;font-weight:700;font-size:clamp(1rem,1.5vw,1.6rem);padding:18px 120px 18px 60px;border-radius:999px;margin-right:-110px;white-space:nowrap}
+.linha__label{background:linear-gradient(180deg,var(--green-2),var(--green-3));color:#fff;font-weight:700;font-size:clamp(1rem,1.5vw,1.6rem);padding:20px 120px 20px 60px;border-radius:999px;margin-right:-110px;white-space:nowrap;
+  /* sempre a altura toda da barra (+1px de sobra) para o creme não aparecer nas pontas arredondadas */
+  align-self:stretch;margin-block:-1px;display:flex;align-items:center;justify-content:center}
 .linha .badge46{position:relative;margin:-20px 0}
 .linha__text{flex:1;text-align:center;padding:16px 28px;font-size:clamp(.95rem,1.4vw,1.55rem);font-weight:500}
 
@@ -140,14 +142,15 @@ ul{list-style:none;margin:0;padding:0}
    baixo de uma é o encaixe exato da onda de cima da próxima, elas se encaixam em qualquer largura. */
 .onda{position:relative;margin-top:-14px;border-style:solid;border-width:0;
   border-image:var(--onda) 14 0 14 0 fill / 14px 0 14px 0 stretch;background:none}
-.onda--so-topo{border-image:var(--onda) 14 0 0 0 fill / 14px 0 0 0 stretch}
 
 /* ---------- Qual escolher ---------- */
 .escolher{--onda:url(assets/bg-onda-creme.png);padding:150px 0 140px}
 .comparativo{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:60px}
 .comp{border-radius:44px;padding:0 50px 50px;margin-top:110px;display:flex;flex-direction:column;align-items:center}
 .comp img{height:180px;width:auto;margin-top:-110px;filter:drop-shadow(0 12px 10px rgba(0,0,0,.25))}
-.comp h3{width:100%;text-align:center;text-transform:uppercase;font-weight:800;font-size:clamp(1.05rem,1.6vw,1.75rem);border-radius:999px;padding:18px 20px;margin:28px 0 36px;box-shadow:0 8px 18px rgba(0,0,0,.18)}
+/* "COMPLEXO SENNA ALMEIDA PRADO 46" ocupa ~21.2em: a fonte é calculada pela largura interna do título
+   ((container - 28 gap)/2 - 100 padding do card - 40 padding do título) com ~5% de folga, para caber numa linha */
+.comp h3{width:100%;text-align:center;text-transform:uppercase;font-weight:800;font-size:clamp(.9rem,calc((min(1400px,88vw) - 308px) * .0224),1.61rem);border-radius:999px;padding:18px 20px;margin:28px 0 36px;box-shadow:0 8px 18px rgba(0,0,0,.18)}
 .comp ul{display:flex;flex-direction:column;gap:14px;font-size:clamp(1rem,1.25vw,1.35rem)}
 .comp li{position:relative;padding-left:36px}
 .comp li::before{content:"+";position:absolute;left:0;top:.1em;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--orange-2);color:#5A2A00;font-weight:800;line-height:1}
@@ -214,11 +217,13 @@ ul{list-style:none;margin:0;padding:0}
   .hero__grid{grid-template-columns:1fr;gap:50px}
   .badge46{width:110px;font-size:3rem}
   .badge46--md{width:84px;font-size:2.3rem}
+  /* o nome precisa caber numa linha: fonte acompanha a largura da tela (14–16px) */
+  .pill--lg{padding:14px 20px;font-size:clamp(.8rem,3.9vw,1rem)}
   .split,.split--laxante,.comparativo,.diferenciais{grid-template-columns:1fr}
   .split__text .title-lg{margin-top:30px}
   .beneficios{grid-template-columns:1fr;margin:40px 0 50px}
   .linha{flex-wrap:wrap;justify-content:center;border-radius:36px;padding-bottom:6px;margin-top:60px}
-  .linha__label{margin-right:0;padding:16px 30px 40px;width:100%;text-align:center}
+  .linha__label{margin-right:0;padding:14px 30px 30px;width:100%;text-align:center}
   .linha .badge46{margin:-26px 0 0}
   .linha__text{flex-basis:100%;padding:10px 20px 18px}
   .laxante{padding-top:70px}
@@ -227,11 +232,19 @@ ul{list-style:none;margin:0;padding:0}
   .laxante__text{padding-bottom:20px}
   .escolher{padding:100px 0 90px}
   .comp{padding:0 24px 36px;margin-top:100px}
+  .comp h3{font-size:1.05rem}
   .comprar{padding:110px 0 120px}
   .loja{flex-basis:200px}
   .footer{padding:90px 0 50px}
   .footer__legal{font-size:.8rem;text-align:left}
   .footer__bottom{flex-direction:column}
   .footer__brand{flex-direction:column;gap:16px}
+}
+@media (max-width:600px){
+  /* no celular, um card por linha: em 2 colunas o texto fica espremido */
+  .situacoes{grid-template-columns:1fr;row-gap:24px;margin-top:50px}
+  .situacoes .card-o{min-height:130px;padding:56px 24px 28px;font-size:1.2rem}
+  /* ondas: usa só os 621px iniciais do PNG (9 ondas de 69px) em vez das 28, para não ficarem espremidas */
+  .onda{border-image-slice:14 1299 14 0 fill}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
