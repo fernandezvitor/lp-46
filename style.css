@@ -215,6 +215,9 @@ ul{list-style:none;margin:0;padding:0}
   .banner{display:none}
   .hero{display:block;padding:50px 0 70px}
   .hero__grid{grid-template-columns:1fr;gap:50px}
+  /* "Suplemento alimentar a base de fibras" ocupa ~20.2em: fonte acompanha a tela para caber numa linha */
+  .hero__product{container-type:inline-size}
+  .hero .pill{padding:9px 18px;font-size:min(.95rem,calc((100cqi - 36px) / 21))}
   .badge46{width:110px;font-size:3rem}
   .badge46--md{width:84px;font-size:2.3rem}
   /* o nome precisa caber numa linha: fonte acompanha a largura da tela (14–16px) */
