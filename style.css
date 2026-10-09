@@ -174,7 +174,8 @@ ul{list-style:none;margin:0;padding:0}
 .carousel__track::-webkit-scrollbar{display:none}
 .carousel__nav[hidden]{display:none}
 .loja{position:relative;flex:0 0 248px;scroll-snap-align:start}
-.loja__card{width:100%;filter:drop-shadow(0 10px 18px rgba(120,30,0,.15))}
+/* border-radius corta os cantos brancos opacos de alguns PNGs de farmácia (arredondado da arte ≈ 58px de 249) */
+.loja__card{width:100%;border-radius:24%;filter:drop-shadow(0 10px 18px rgba(120,30,0,.15))}
 .loja__cart{position:absolute;left:50%;bottom:-32px;transform:translateX(-50%);width:66px;height:66px;transition:transform .2s}
 .loja:hover .loja__cart{transform:translateX(-50%) scale(1.08)}
 .carousel__nav{display:flex;align-items:center;gap:10px;margin-top:10px}
@@ -238,6 +239,14 @@ ul{list-style:none;margin:0;padding:0}
   .comp h3{font-size:1.05rem}
   .comprar{padding:110px 0 120px}
   .loja{flex-basis:200px}
+  /* com 12 farmácias, as bolinhas de 24px não cabiam e escondiam a seta "próximo": menores no mobile, a ativa vira pílula */
+  .carousel__nav{gap:12px;margin-top:4px}
+  .carousel__arrow{width:32px;height:32px}
+  /* a seta "anterior" fica sobre o laranja-claro do degradê: um laranja mais escuro para não sumir */
+  .carousel__arrow[data-prev]{background:#E84E00}
+  .carousel__dots{gap:6px}
+  .carousel__dots button{width:10px;height:10px;border-width:2px;transition:width .2s}
+  .carousel__dots button[aria-current="true"]{width:22px;border-radius:999px}
   .footer{padding:90px 0 50px}
   .footer__legal{font-size:.8rem;text-align:left}
   .footer__bottom{flex-direction:column}

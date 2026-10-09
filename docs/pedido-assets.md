@@ -1,15 +1,15 @@
 # LP 46 — Pendências (assets e links)
 
-## Links a receber
+## Farmácias
 
-Hoje esses botões estão com `href="#"` (não levam a lugar nenhum). Basta mandar a URL de cada um.
+Cada card tem **um link só** (card inteiro + carrinho verde). Os 12 estão com `href="#"`: **links a receber** do cliente.
 
-| Onde | Botão | Link |
-|---|---|---|
-| Carrossel "Seu conforto já começa…" | Drogasil | _a receber_ |
-| Carrossel | Droga Raia | _a receber_ |
-| Carrossel | Panvel | _a receber_ |
-| Carrossel | Pague Menos | _a receber_ |
+Drogasil · Droga Raia · Panvel · Pague Menos · Drogal · Drogaria São Paulo · Drogasmil · Extrafarma · Farmácias São João · Venancio · Drogarias Tamoio · Drogaria Araujo
+
+**Cards a receber** (já pedidos): `card-pacheco.png` (Drogarias Pacheco) e `card-ultrafarma.png` (Ultrafarma).
+
+Mesmo padrão dos outros cards: 249 × 240, de preferência com os **cantos transparentes** e o creme **#FDECDC** (os 8 últimos vieram com cantos brancos e creme um pouco diferente — corrigido via CSS, mas o ideal é exportar igual).
+## Botões internos
 
 **Para confirmar:** os botões abaixo hoje **rolam a página** até o carrossel de farmácias. Devem continuar assim, ou levar a algum link externo?
 
@@ -17,9 +17,7 @@ Hoje esses botões estão com `href="#"` (não levam a lugar nenhum). Basta mand
 - "Saiba onde comprar" (seção 46 Geleia)
 - "Saiba onde comprar" (seção Complexo Senna)
 
-Os links de farmácia e redes sociais abrem em nova aba.
-
-✅ Redes sociais já aplicadas (header e rodapé): só **Instagram** (instagram.com/linha_46) e **YouTube** (youtube.com/@Linha46-oficial); Facebook e LinkedIn removidos.
+✅ Redes sociais (header e rodapé): só **Instagram** (instagram.com/linha_46) e **YouTube** (youtube.com/@Linha46-oficial). Links externos abrem em nova aba.
 
 ## Imagens a receber
 
@@ -33,5 +31,4 @@ Os links de farmácia e redes sociais abrem em nova aba.
 
 ## Outros
 
-- Logos de outras farmácias, se o carrossel tiver mais de 4 (o layout mostra 6 pontos de navegação).
 - No card verde da seção "Qual escolher", o layout está escrito **"ALEMIDA"**. Na LP usei **"ALMEIDA"**, que é a grafia certa. Ok?
