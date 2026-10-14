@@ -23,8 +23,6 @@ Mesmo padrão dos outros cards: 249 × 240, de preferência com os **cantos tran
 
 | Arquivo | O que é | Tamanho de uso (1x) |
 |---|---|---|
-| `geleia-destaque.webp` | **Nova versão** da imagem da seção Lançamento (46 Geleia), em modificação | 810 × 610 |
-| `selo-sabor-ameixa.png` | Selo "Sabor ameixa" da seção Lançamento (o pote atual veio sem ele). Pode já vir na imagem nova | ~170 × 170 |
 | `logo-megalabs.png` | Logo Megalabs branco, fundo transparente (rodapé) | 157 × 40 |
 
 **Formato:** PNG ou WebP com fundo transparente, em **2x** (dobro do tamanho de uso, para telas retina).
