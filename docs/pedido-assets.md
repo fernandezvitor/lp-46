@@ -2,9 +2,12 @@
 
 ## Farmácias
 
-Cada card tem **um link só** (card inteiro + carrinho verde). Os 14 cards estão no carrossel; todos com `href="#"`: **links a receber** do cliente.
+✅ 14 farmácias no carrossel, cada uma com **um link só** (card inteiro + carrinho verde), abrindo em nova aba. Links aplicados conforme a lista do cliente:
 
-Drogasil · Droga Raia · Panvel · Pague Menos · Drogal · Drogaria São Paulo · Drogasmil · Extrafarma · Farmácias São João · Venancio · Drogarias Tamoio · Drogaria Araujo · Drogarias Pacheco · Ultrafarma
+- **46 Geleia:** Drogasil, Droga Raia, Panvel, Drogal, Venancio, Araujo
+- **Complexo Senna:** Pague Menos, Drogaria São Paulo, Drogasmil, Extrafarma, Farmácias São João, Drogarias Tamoio, Drogarias Pacheco, Ultrafarma
+
+Obs.: Drogasil, Panvel e Venancio (Geleia) e Extrafarma (Senna) caem na **busca** da farmácia, não direto na página do produto.
 
 ## Botões internos
 
