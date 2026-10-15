@@ -2,13 +2,10 @@
 
 ## Farmácias
 
-Cada card tem **um link só** (card inteiro + carrinho verde). Os 12 estão com `href="#"`: **links a receber** do cliente.
+Cada card tem **um link só** (card inteiro + carrinho verde). Os 14 cards estão no carrossel; todos com `href="#"`: **links a receber** do cliente.
 
-Drogasil · Droga Raia · Panvel · Pague Menos · Drogal · Drogaria São Paulo · Drogasmil · Extrafarma · Farmácias São João · Venancio · Drogarias Tamoio · Drogaria Araujo
+Drogasil · Droga Raia · Panvel · Pague Menos · Drogal · Drogaria São Paulo · Drogasmil · Extrafarma · Farmácias São João · Venancio · Drogarias Tamoio · Drogaria Araujo · Drogarias Pacheco · Ultrafarma
 
-**Cards a receber** (já pedidos): `card-pacheco.png` (Drogarias Pacheco) e `card-ultrafarma.png` (Ultrafarma).
-
-Mesmo padrão dos outros cards: 249 × 240, de preferência com os **cantos transparentes** e o creme **#FDECDC** (os 8 últimos vieram com cantos brancos e creme um pouco diferente — corrigido via CSS, mas o ideal é exportar igual).
 ## Botões internos
 
 **Para confirmar:** os botões abaixo hoje **rolam a página** até o carrossel de farmácias. Devem continuar assim, ou levar a algum link externo?
@@ -23,7 +20,7 @@ Mesmo padrão dos outros cards: 249 × 240, de preferência com os **cantos tran
 
 | Arquivo | O que é | Tamanho de uso (1x) |
 |---|---|---|
-| `logo-megalabs.png` | Logo Megalabs branco, fundo transparente (rodapé) | 157 × 40 |
+| `logo-megalabs.png` | Logo Megalabs branco, fundo transparente (rodapé) — **opcional**: o cliente não tem por ora, o atual fica | 157 × 40 |
 
 **Formato:** PNG ou WebP com fundo transparente, em **2x** (dobro do tamanho de uso, para telas retina).
 
